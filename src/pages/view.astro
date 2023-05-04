@@ -1,0 +1,15 @@
+---
+import ModelView from '../layouts/ModelView.astro';
+---
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+<script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+
+<ModelView title="View">
+    <model-viewer src="can_ribbon.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp" shadow-intensity="1" camera-orbit="-144.4deg 76.71deg 24.27m" field-of-view="30.83deg" min-camera-orbit="-166deg 36deg auto" max-camera-orbit="-82deg 98deg auto" environment-image="music_hall_01_1k.hdr"> </model-viewer>
+</ModelView>
+<style>
+    model-viewer {
+        width: 100vw;
+        height: 100vh;
+    }
+</style>
