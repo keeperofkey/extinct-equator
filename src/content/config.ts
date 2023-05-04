@@ -1,4 +1,6 @@
+// 1. Import utilities from `astro:content`
 import { defineCollection, z } from 'astro:content';
+// 2. Define your collection(s)
 
 const blog = defineCollection({
 	// Type-check frontmatter using a schema
@@ -18,4 +20,23 @@ const blog = defineCollection({
 	}),
 });
 
-export const collections = { blog };
+const proj = defineCollection({
+	// Type-check frontmatter using a schema
+	schema: z.object({
+		path: z.string(),
+		light: z.string(),
+		poster: z.string(),
+		armodes: z.string(),
+		camctrl: z.string(),
+		shadow: z.string(),
+		camorb: z.string(),
+		fov: z.string(),
+		mincamorb: z.string(),
+		maxcamorb: z.string(),
+	}),
+});
+
+export const collections = {
+  'blog': blog,
+  'proj': proj,
+};

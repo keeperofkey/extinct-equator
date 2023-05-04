@@ -13,8 +13,13 @@ const { title } = Astro.props
         <div class="pageframe" flyout-zoom-pane>
             <slot />
         </div>
-        <style>
+        <div class="background">
 
+        </div>
+        <style>
+            .pageframe {
+                height: 400vh;
+            }
         </style>
     </body>
 
