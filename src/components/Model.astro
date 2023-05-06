@@ -12,7 +12,7 @@ const oneProj = await getEntryBySlug('proj', 'joya')
         disable-tap
         poster={oneProj.data.poster}
         shadow-intensity={oneProj.data.shadow}
-        camera-orbit="calc(30deg - env(window-scroll-y) * 60deg) 75deg 1.5m"
+        camera-orbit="calc(-144deg - env(window-scroll-y) * -30deg) calc(35deg + env(window-scroll-y) * 60deg) 1.5m"
         field-of-view={oneProj.data.fov}
         environment-image={oneProj.data.light}
     </model-viewer>

@@ -5,16 +5,10 @@ const { title } = Astro.props
     <head>
         <meta name="viewport" content="width=device-width, user-scalable=no"
         <h1>{title}</h1>
-        <style>
-
-        </style>
     </head>
     <body>
         <div class="pageframe" flyout-zoom-pane>
             <slot />
-        </div>
-        <div class="background">
-
         </div>
         <style>
             .pageframe {

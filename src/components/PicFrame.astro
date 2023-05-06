@@ -1,0 +1,24 @@
+---
+import { Image } from 'astro:assets';
+import can01 from "../assets/images/cans-1.png"
+import can02 from "../assets/images/cans-2.png"
+import can03 from "../assets/images/cans-3.png"
+import can04 from "../assets/images/cans-5.png"
+import can05 from "../assets/images/cans-7.png"
+---
+<div class='frame'>
+    <Image src={can01} alt='first image of cans from Joya: Air'/>
+    <Image src={can02} alt='second image of cans from Joya: Air'/>
+    <Image src={can03} alt='third image of cans from Joya: Air'/>
+    <Image src={can04} alt='fourth image of cans from Joya: Air'/>
+    <Image src={can05} alt='fifth image of cans from Joya: Air'/>
+</div>
+<style>
+    ul {
+    }
+    img {
+        width:96vw;
+        height: auto;
+        padding: 1em;
+    }
+</style>
