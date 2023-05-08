@@ -1,0 +1,52 @@
+---
+---
+<body>
+    <script>
+    import * as THREE from 'three';
+    import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+    import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+    // Create Scene
+    let scene = new THREE.Scene();
+    scene.background = new THREE.Color("white");
+    // Create Camera
+    const camera = new THREE.PerspectiveCamera(
+        50, // Field Of View Angle
+        window.innerWidth / window.innerHeight, // Aspect Ratio
+        0.1, // Near Plane Distance
+        1000 // Far Plane Distance
+    );
+    // Set up renderer
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+    renderer.outputColorSpace = THREE.SRGBColorSpace;
+    // Load GLTF Model
+    const loader = new GLTFLoader()
+    loader.load("./models/can_ribbon.glb", function( gltf: { scene: any; } ){
+        const joyaObject = gltf.scene.children[0];
+        console.log(gltf)
+        joyaObject.position.set(-1,-1,0); 
+        scene.add(joyaObject); 
+    }, undefined, function(){ console.log("error loading") } );
+    // Material
+    const material = new THREE.MeshStandardMaterial()
+    // light
+    const light = new THREE.AmbientLight(0xffffff)
+    scene.add(light); 
+    // Bind Controls
+    const controls = new OrbitControls( camera, renderer.domElement );
+    // Cam Pos
+    camera.position.set(0, 20, 1)
+    controls.update()
+    //Animate
+    function animate() {
+        requestAnimationFrame(animate);
+
+        renderer.render(scene, camera);
+    
+        controls.update();
+    };
+    animate();
+    </script>
+</body>
