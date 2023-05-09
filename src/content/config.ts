@@ -36,7 +36,18 @@ const proj = defineCollection({
 	}),
 });
 
+const img = defineCollection({
+	// Type-check frontmatter using a schema
+	schema: z.object({
+		img01: z.string(),	
+		img02: z.string(),	
+		img03: z.string(),	
+		img04: z.string(),	
+		img05: z.string(),	
+	}),
+});
 export const collections = {
   'blog': blog,
   'proj': proj,
+  'img': img,
 };

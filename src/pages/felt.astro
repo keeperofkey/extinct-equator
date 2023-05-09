@@ -1,0 +1,19 @@
+---
+import Felt from '../components/Felt.svelte'
+import Title from '../components/Title.astro'
+import Joya from '../components/Joya.svelte'
+---
+<script>
+    
+</script>
+<body>
+    <div>
+        <Title title='Felt' />
+    </div>
+    <div>
+       <Felt client:only /> 
+    </div>
+    <div>
+        <Joya client:only />
+    </div>
+</body>

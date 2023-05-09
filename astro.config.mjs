@@ -10,5 +10,10 @@ export default defineConfig({
     assets: true
   },
   site: 'https://example.com',
+  vite: {
+    ssr: {
+    noExternal: ['three', 'troika-three-text']
+  }
+  },
   integrations: [mdx(), sitemap(), svelte()]
 });
